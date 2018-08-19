@@ -45,6 +45,10 @@ namespace TokenDemo
                 app.UseDeveloperExceptionPage();
             }
 
+
+            SeedDatabase.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
+
+
             app.UseMvc();
         }
     }
